@@ -1,0 +1,9 @@
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\bin\Debug\HMI_project.exe.config
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\bin\Debug\HMI_project.exe
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\bin\Debug\HMI_project.pdb
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.csprojResolveAssemblyReference.cache
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.Form1.resources
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.Properties.Resources.resources
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.csproj.GenerateResource.Cache
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.exe
+C:\Users\Morskee\documents\visual studio 2017\Projects\HMI_project\HMI_project\obj\Debug\HMI_project.pdb
