@@ -21,9 +21,7 @@ namespace HMI_project
             aGauge1.Value = trackBar1.Value;
             aGauge2.Value = trackBar1.Value;
             aGauge9.Value = trackBar1.Value / 4;
-
-
-
+            aGauge3.Value = trackBar1.Value / 4;
         }
     }
 }
