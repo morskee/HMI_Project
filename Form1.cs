@@ -19,9 +19,32 @@ namespace HMI_project
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             aGauge1.Value = trackBar1.Value;
-            aGauge2.Value = trackBar1.Value;
-            aGauge9.Value = trackBar1.Value / 4;
-            aGauge3.Value = trackBar1.Value / 4;
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            label3.Text = DateTime.Now.ToLongTimeString();
+
+            label4.Text = DateTime.Now.ToLongDateString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label3.Text = DateTime.Now.ToLongTimeString();
+
+            label4.Text = DateTime.Now.ToLongDateString();
+
+            timer1.Start();
+        }
+
+        private void trackBar2_Scroll(object sender, EventArgs e)
+        {
+            aGauge2.Value = trackBar2.Value;
+        }
+
+        private void trackBar3_Scroll(object sender, EventArgs e)
+        {
+            aGauge3.Value = trackBar3.Value;
         }
     }
 }

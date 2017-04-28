@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.aGauge9 = new AGaugeApp.AGauge();
             this.aGauge2 = new AGaugeApp.AGauge();
@@ -48,6 +49,15 @@
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
+            this.pictureBox15 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox16 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.trackBar2 = new System.Windows.Forms.TrackBar();
+            this.trackBar3 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,6 +73,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             this.SuspendLayout();
             // 
             // aGauge9
@@ -89,19 +103,19 @@
         new System.Drawing.Point(10, 10)};
             this.aGauge9.CapsText = new string[] {
         "",
-        "               % Fuel",
+        "",
         "",
         "",
         ""};
-            this.aGauge9.CapText = "               % Fuel";
+            this.aGauge9.CapText = "";
             this.aGauge9.Center = new System.Drawing.Point(70, 70);
             this.aGauge9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aGauge9.Location = new System.Drawing.Point(803, 85);
+            this.aGauge9.Location = new System.Drawing.Point(799, 79);
             this.aGauge9.MaxValue = 100F;
             this.aGauge9.MinValue = 0F;
             this.aGauge9.Name = "aGauge9";
             this.aGauge9.NeedleColor1 = AGaugeApp.AGauge.NeedleColorEnum.Gray;
-            this.aGauge9.NeedleColor2 = System.Drawing.Color.Black;
+            this.aGauge9.NeedleColor2 = System.Drawing.Color.WhiteSmoke;
             this.aGauge9.NeedleRadius = 40;
             this.aGauge9.NeedleType = 0;
             this.aGauge9.NeedleWidth = 2;
@@ -162,7 +176,7 @@
             this.aGauge9.ScaleLinesMinorNumOf = 9;
             this.aGauge9.ScaleLinesMinorOuterRadius = 50;
             this.aGauge9.ScaleLinesMinorWidth = 2;
-            this.aGauge9.ScaleNumbersColor = System.Drawing.Color.Black;
+            this.aGauge9.ScaleNumbersColor = System.Drawing.Color.White;
             this.aGauge9.ScaleNumbersFormat = null;
             this.aGauge9.ScaleNumbersRadius = 62;
             this.aGauge9.ScaleNumbersRotation = 90;
@@ -197,11 +211,11 @@
         new System.Drawing.Point(10, 10)};
             this.aGauge2.CapsText = new string[] {
         "",
-        "KM/H",
+        "",
         "",
         "",
         ""};
-            this.aGauge2.CapText = "KM/H";
+            this.aGauge2.CapText = "";
             this.aGauge2.Center = new System.Drawing.Point(100, 100);
             this.aGauge2.Location = new System.Drawing.Point(649, 12);
             this.aGauge2.MaxValue = 400F;
@@ -314,11 +328,11 @@
         new System.Drawing.Point(10, 10)};
             this.aGauge1.CapsText = new string[] {
         "",
-        "1000RPM",
+        "",
         "",
         "",
         ""};
-            this.aGauge1.CapText = "1000RPM";
+            this.aGauge1.CapText = "";
             this.aGauge1.Center = new System.Drawing.Point(100, 100);
             this.aGauge1.Location = new System.Drawing.Point(144, 10);
             this.aGauge1.MaxValue = 400F;
@@ -381,7 +395,7 @@
             this.aGauge1.ScaleLinesMajorOuterRadius = 80;
             this.aGauge1.ScaleLinesMajorStepValue = 50F;
             this.aGauge1.ScaleLinesMajorWidth = 2;
-            this.aGauge1.ScaleLinesMinorColor = System.Drawing.Color.WhiteSmoke;
+            this.aGauge1.ScaleLinesMinorColor = System.Drawing.Color.Gray;
             this.aGauge1.ScaleLinesMinorInnerRadius = 75;
             this.aGauge1.ScaleLinesMinorNumOf = 9;
             this.aGauge1.ScaleLinesMinorOuterRadius = 80;
@@ -433,7 +447,7 @@
             this.aGauge3.MinValue = 0F;
             this.aGauge3.Name = "aGauge3";
             this.aGauge3.NeedleColor1 = AGaugeApp.AGauge.NeedleColorEnum.Gray;
-            this.aGauge3.NeedleColor2 = System.Drawing.Color.DimGray;
+            this.aGauge3.NeedleColor2 = System.Drawing.Color.WhiteSmoke;
             this.aGauge3.NeedleRadius = 40;
             this.aGauge3.NeedleType = 0;
             this.aGauge3.NeedleWidth = 2;
@@ -645,12 +659,104 @@
             this.pictureBox14.TabIndex = 32;
             this.pictureBox14.TabStop = false;
             // 
+            // pictureBox15
+            // 
+            this.pictureBox15.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox15.Image")));
+            this.pictureBox15.Location = new System.Drawing.Point(878, 151);
+            this.pictureBox15.Name = "pictureBox15";
+            this.pictureBox15.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox15.TabIndex = 33;
+            this.pictureBox15.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
+            this.label1.Location = new System.Drawing.Point(733, 153);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 13);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "KM/H";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
+            this.label2.Location = new System.Drawing.Point(222, 153);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.TabIndex = 35;
+            this.label2.Text = "1000RPM";
+            // 
+            // pictureBox16
+            // 
+            this.pictureBox16.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox16.Image")));
+            this.pictureBox16.Location = new System.Drawing.Point(66, 157);
+            this.pictureBox16.Name = "pictureBox16";
+            this.pictureBox16.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox16.TabIndex = 37;
+            this.pictureBox16.TabStop = false;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
+            this.label3.Location = new System.Drawing.Point(852, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(30, 13);
+            this.label3.TabIndex = 38;
+            this.label3.Text = "Time";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
+            this.label4.Location = new System.Drawing.Point(852, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(30, 13);
+            this.label4.TabIndex = 39;
+            this.label4.Text = "Date";
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // trackBar2
+            // 
+            this.trackBar2.Location = new System.Drawing.Point(943, 12);
+            this.trackBar2.Maximum = 400;
+            this.trackBar2.Name = "trackBar2";
+            this.trackBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.trackBar2.Size = new System.Drawing.Size(45, 179);
+            this.trackBar2.TabIndex = 40;
+            this.trackBar2.Scroll += new System.EventHandler(this.trackBar2_Scroll);
+            // 
+            // trackBar3
+            // 
+            this.trackBar3.Location = new System.Drawing.Point(47, 199);
+            this.trackBar3.Maximum = 100;
+            this.trackBar3.Name = "trackBar3";
+            this.trackBar3.Size = new System.Drawing.Size(91, 45);
+            this.trackBar3.TabIndex = 41;
+            this.trackBar3.Scroll += new System.EventHandler(this.trackBar3_Scroll);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(946, 203);
+            this.ClientSize = new System.Drawing.Size(994, 232);
+            this.Controls.Add(this.trackBar3);
+            this.Controls.Add(this.trackBar2);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.pictureBox16);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox15);
             this.Controls.Add(this.pictureBox14);
             this.Controls.Add(this.pictureBox13);
             this.Controls.Add(this.pictureBox12);
@@ -672,6 +778,7 @@
             this.Controls.Add(this.aGauge9);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -687,6 +794,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -713,6 +824,15 @@
         private System.Windows.Forms.PictureBox pictureBox12;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TrackBar trackBar2;
+        private System.Windows.Forms.TrackBar trackBar3;
     }
 }
 
