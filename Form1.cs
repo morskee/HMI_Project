@@ -40,11 +40,21 @@ namespace HMI_project
         private void trackBar2_Scroll(object sender, EventArgs e)
         {
             aGauge2.Value = trackBar2.Value;
+            label6.Text = "";
+            if (trackBar2.Value >= 200) {
+                label6.Text = "WARNING!";
+            }
+            
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
         {
             aGauge3.Value = trackBar3.Value;
+        }
+
+        private void trackBar4_Scroll(object sender, EventArgs e)
+        {
+            aGauge4.Value = trackBar4.Value;
         }
     }
 }
