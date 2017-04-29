@@ -63,14 +63,14 @@
             this.trackBar4 = new System.Windows.Forms.TrackBar();
             this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -313,7 +313,7 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(9, 121);
-            this.trackBar1.Maximum = 400;
+            this.trackBar1.Maximum = 8000;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(179, 45);
             this.trackBar1.TabIndex = 16;
@@ -350,7 +350,7 @@
             this.aGauge1.CapText = "";
             this.aGauge1.Center = new System.Drawing.Point(100, 100);
             this.aGauge1.Location = new System.Drawing.Point(107, 10);
-            this.aGauge1.MaxValue = 400F;
+            this.aGauge1.MaxValue = 8F;
             this.aGauge1.MinValue = 0F;
             this.aGauge1.Name = "aGauge1";
             this.aGauge1.NeedleColor1 = AGaugeApp.AGauge.NeedleColorEnum.Gray;
@@ -361,7 +361,7 @@
             this.aGauge1.Range_Idx = ((byte)(0));
             this.aGauge1.RangeColor = System.Drawing.SystemColors.Control;
             this.aGauge1.RangeEnabled = true;
-            this.aGauge1.RangeEndValue = 300F;
+            this.aGauge1.RangeEndValue = 6.5F;
             this.aGauge1.RangeInnerRadius = 70;
             this.aGauge1.RangeOuterRadius = 80;
             this.aGauge1.RangesColor = new System.Drawing.Color[] {
@@ -377,8 +377,8 @@
         false,
         false};
             this.aGauge1.RangesEndValue = new float[] {
-        300F,
-        400F,
+        6.5F,
+        8F,
         0F,
         0F,
         0F};
@@ -396,7 +396,7 @@
         80};
             this.aGauge1.RangesStartValue = new float[] {
         0F,
-        300F,
+        6.5F,
         0F,
         0F,
         0F};
@@ -408,7 +408,7 @@
             this.aGauge1.ScaleLinesMajorColor = System.Drawing.Color.WhiteSmoke;
             this.aGauge1.ScaleLinesMajorInnerRadius = 70;
             this.aGauge1.ScaleLinesMajorOuterRadius = 80;
-            this.aGauge1.ScaleLinesMajorStepValue = 50F;
+            this.aGauge1.ScaleLinesMajorStepValue = 1F;
             this.aGauge1.ScaleLinesMajorWidth = 2;
             this.aGauge1.ScaleLinesMinorColor = System.Drawing.Color.Gray;
             this.aGauge1.ScaleLinesMinorInnerRadius = 75;
@@ -698,11 +698,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
-            this.label2.Location = new System.Drawing.Point(185, 153);
+            this.label2.Location = new System.Drawing.Point(179, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
+            this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 35;
-            this.label2.Text = "1000RPM";
+            this.label2.Text = "x1000RPM";
             // 
             // pictureBox16
             // 
@@ -818,65 +818,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
-            // checkBox1
+            // label10
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(8, 16);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(81, 17);
-            this.checkBox1.TabIndex = 47;
-            this.checkBox1.Text = "Oil pressure";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(8, 39);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(92, 17);
-            this.checkBox2.TabIndex = 47;
-            this.checkBox2.Text = "Check engine";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(8, 62);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(47, 17);
-            this.checkBox3.TabIndex = 47;
-            this.checkBox3.Text = "ABS";
-            this.checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(8, 85);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(47, 17);
-            this.checkBox4.TabIndex = 47;
-            this.checkBox4.Text = "ESP";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.Window;
-            this.label7.Location = new System.Drawing.Point(6, 105);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 13);
-            this.label7.TabIndex = 48;
-            this.label7.Text = "1000RPM";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.Window;
-            this.label8.Location = new System.Drawing.Point(5, 153);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 13);
-            this.label8.TabIndex = 49;
-            this.label8.Text = "Oil temp";
+            this.label10.AutoSize = true;
+            this.label10.ForeColor = System.Drawing.SystemColors.Window;
+            this.label10.Location = new System.Drawing.Point(204, 17);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.TabIndex = 50;
+            this.label10.Text = "Fuel consumption";
             // 
             // label9
             // 
@@ -888,15 +838,65 @@
             this.label9.TabIndex = 47;
             this.label9.Text = "KM/H";
             // 
-            // label10
+            // label8
             // 
-            this.label10.AutoSize = true;
-            this.label10.ForeColor = System.Drawing.SystemColors.Window;
-            this.label10.Location = new System.Drawing.Point(204, 17);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
-            this.label10.TabIndex = 50;
-            this.label10.Text = "Fuel consumption";
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Window;
+            this.label8.Location = new System.Drawing.Point(5, 153);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 13);
+            this.label8.TabIndex = 49;
+            this.label8.Text = "Oil temp";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.Window;
+            this.label7.Location = new System.Drawing.Point(6, 105);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "x1000RPM";
+            // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(8, 85);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(47, 17);
+            this.checkBox4.TabIndex = 47;
+            this.checkBox4.Text = "ESP";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(8, 62);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(47, 17);
+            this.checkBox3.TabIndex = 47;
+            this.checkBox3.Text = "ABS";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(8, 39);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(92, 17);
+            this.checkBox2.TabIndex = 47;
+            this.checkBox2.Text = "Check engine";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(8, 16);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(81, 17);
+            this.checkBox1.TabIndex = 47;
+            this.checkBox1.Text = "Oil pressure";
+            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

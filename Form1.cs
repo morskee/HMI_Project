@@ -18,7 +18,7 @@ namespace HMI_project
         }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            aGauge1.Value = trackBar1.Value;
+            aGauge1.Value = trackBar1.Value / 1000;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
