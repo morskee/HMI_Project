@@ -30,6 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.aGauge4 = new AGaugeApp.AGauge();
             this.aGauge2 = new AGaugeApp.AGauge();
             this.trackBar1 = new System.Windows.Forms.TrackBar();
@@ -71,6 +75,9 @@
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -93,6 +100,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBar4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
             // 
             // aGauge4
@@ -201,7 +209,7 @@
             this.aGauge4.Size = new System.Drawing.Size(205, 179);
             this.aGauge4.TabIndex = 14;
             this.aGauge4.Text = "aGauge4";
-            this.aGauge4.Value = 0F;
+            this.aGauge4.Value = 50F;
             // 
             // aGauge2
             // 
@@ -313,7 +321,7 @@
             // trackBar1
             // 
             this.trackBar1.Location = new System.Drawing.Point(9, 121);
-            this.trackBar1.Maximum = 8000;
+            this.trackBar1.Maximum = 80;
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(179, 45);
             this.trackBar1.TabIndex = 16;
@@ -350,7 +358,7 @@
             this.aGauge1.CapText = "";
             this.aGauge1.Center = new System.Drawing.Point(100, 100);
             this.aGauge1.Location = new System.Drawing.Point(107, 10);
-            this.aGauge1.MaxValue = 8F;
+            this.aGauge1.MaxValue = 80F;
             this.aGauge1.MinValue = 0F;
             this.aGauge1.Name = "aGauge1";
             this.aGauge1.NeedleColor1 = AGaugeApp.AGauge.NeedleColorEnum.Gray;
@@ -361,7 +369,7 @@
             this.aGauge1.Range_Idx = ((byte)(0));
             this.aGauge1.RangeColor = System.Drawing.SystemColors.Control;
             this.aGauge1.RangeEnabled = true;
-            this.aGauge1.RangeEndValue = 6.5F;
+            this.aGauge1.RangeEndValue = 65F;
             this.aGauge1.RangeInnerRadius = 70;
             this.aGauge1.RangeOuterRadius = 80;
             this.aGauge1.RangesColor = new System.Drawing.Color[] {
@@ -377,8 +385,8 @@
         false,
         false};
             this.aGauge1.RangesEndValue = new float[] {
-        6.5F,
-        8F,
+        65F,
+        80F,
         0F,
         0F,
         0F};
@@ -396,7 +404,7 @@
         80};
             this.aGauge1.RangesStartValue = new float[] {
         0F,
-        6.5F,
+        65F,
         0F,
         0F,
         0F};
@@ -408,7 +416,7 @@
             this.aGauge1.ScaleLinesMajorColor = System.Drawing.Color.WhiteSmoke;
             this.aGauge1.ScaleLinesMajorInnerRadius = 70;
             this.aGauge1.ScaleLinesMajorOuterRadius = 80;
-            this.aGauge1.ScaleLinesMajorStepValue = 1F;
+            this.aGauge1.ScaleLinesMajorStepValue = 10F;
             this.aGauge1.ScaleLinesMajorWidth = 2;
             this.aGauge1.ScaleLinesMinorColor = System.Drawing.Color.Gray;
             this.aGauge1.ScaleLinesMinorInnerRadius = 75;
@@ -577,7 +585,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(444, 107);
+            this.pictureBox5.Location = new System.Drawing.Point(444, 102);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(40, 40);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -587,7 +595,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(398, 61);
+            this.pictureBox6.Location = new System.Drawing.Point(399, 61);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(40, 40);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -700,9 +708,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(179, 153);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 35;
-            this.label2.Text = "x1000RPM";
+            this.label2.Text = "x100RPM";
             // 
             // pictureBox16
             // 
@@ -728,7 +736,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.SystemColors.Window;
-            this.label4.Location = new System.Drawing.Point(783, 22);
+            this.label4.Location = new System.Drawing.Point(778, 22);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 13);
             this.label4.TabIndex = 39;
@@ -771,7 +779,7 @@
             // 
             this.label6.BackColor = System.Drawing.Color.White;
             this.label6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label6.Location = new System.Drawing.Point(416, 160);
+            this.label6.Location = new System.Drawing.Point(416, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(98, 33);
             this.label6.TabIndex = 43;
@@ -784,12 +792,13 @@
             this.trackBar4.Name = "trackBar4";
             this.trackBar4.Size = new System.Drawing.Size(179, 45);
             this.trackBar4.TabIndex = 44;
+            this.trackBar4.Value = 50;
             this.trackBar4.Scroll += new System.EventHandler(this.trackBar4_Scroll);
             // 
             // pictureBox17
             // 
             this.pictureBox17.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox17.Image")));
-            this.pictureBox17.Location = new System.Drawing.Point(445, 61);
+            this.pictureBox17.Location = new System.Drawing.Point(445, 56);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(40, 40);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -811,9 +820,9 @@
             this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.ForeColor = System.Drawing.SystemColors.Window;
-            this.groupBox1.Location = new System.Drawing.Point(12, 234);
+            this.groupBox1.Location = new System.Drawing.Point(12, 207);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(393, 273);
+            this.groupBox1.Size = new System.Drawing.Size(393, 269);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -824,9 +833,9 @@
             this.label10.ForeColor = System.Drawing.SystemColors.Window;
             this.label10.Location = new System.Drawing.Point(204, 17);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(90, 13);
+            this.label10.Size = new System.Drawing.Size(27, 13);
             this.label10.TabIndex = 50;
-            this.label10.Text = "Fuel consumption";
+            this.label10.Text = "Fuel";
             // 
             // label9
             // 
@@ -854,9 +863,9 @@
             this.label7.ForeColor = System.Drawing.SystemColors.Window;
             this.label7.Location = new System.Drawing.Point(6, 105);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 13);
+            this.label7.Size = new System.Drawing.Size(54, 13);
             this.label7.TabIndex = 48;
-            this.label7.Text = "x1000RPM";
+            this.label7.Text = "x100RPM";
             // 
             // checkBox4
             // 
@@ -898,12 +907,46 @@
             this.checkBox1.Text = "Oil pressure";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label11
+            // 
+            this.label11.BackColor = System.Drawing.Color.White;
+            this.label11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label11.Location = new System.Drawing.Point(416, 183);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(98, 20);
+            this.label11.TabIndex = 47;
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(411, 207);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Legend = "Legend1";
+            series1.Name = "Speed";
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Legend = "Legend1";
+            series2.Name = "Temp";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Size = new System.Drawing.Size(488, 269);
+            this.chart1.TabIndex = 48;
+            this.chart1.Text = "chart1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.ClientSize = new System.Drawing.Size(911, 519);
+            this.ClientSize = new System.Drawing.Size(911, 488);
+            this.Controls.Add(this.chart1);
+            this.Controls.Add(this.label11);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox17);
             this.Controls.Add(this.label6);
@@ -958,6 +1001,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1006,6 +1050,9 @@
         private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Timer timer2;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
     }
 }
 

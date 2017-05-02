@@ -18,7 +18,16 @@ namespace HMI_project
         }
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            aGauge1.Value = trackBar1.Value / 1000;
+            aGauge1.Value = trackBar1.Value;
+
+            label11.Text = "";
+            if (trackBar2.Value > 0 && trackBar1.Value > 0)
+            {
+                float zmienna = trackBar2.Value + trackBar1.Value;
+                float zmienna2 = zmienna / 25;
+
+                label11.Text = "" + zmienna2.ToString("F2") + "L/100KM";
+            }
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -31,7 +40,7 @@ namespace HMI_project
         private void timer1_Tick(object sender, EventArgs e)
         {
             label3.Text = DateTime.Now.ToLongTimeString();
-
+            
             label4.Text = DateTime.Now.ToLongDateString();
 
             timer1.Start();
@@ -44,7 +53,13 @@ namespace HMI_project
             if (trackBar2.Value >= 200) {
                 label6.Text = "WARNING!";
             }
-            
+            label11.Text = "";
+            if (trackBar2.Value > 0 && trackBar1.Value > 0)
+            {
+                float zmienna = trackBar2.Value + trackBar1.Value;
+                float zmienna2 = zmienna / 25;
+                label11.Text = "" + zmienna2.ToString("F2") + "L/100KM";
+            }
         }
 
         private void trackBar3_Scroll(object sender, EventArgs e)
@@ -56,5 +71,11 @@ namespace HMI_project
         {
             aGauge4.Value = trackBar4.Value;
         }
+        /*
+        float zmienna = trackBar2.Value + trackBar1.Value;
+        float zmienna2 = zmienna / 25;
+        chart1.Series["Speed"].Points.AddY(zmienna2);
+        */
+
     }
 }
