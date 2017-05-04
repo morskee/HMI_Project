@@ -71,11 +71,15 @@ namespace HMI_project
         {
             aGauge4.Value = trackBar4.Value;
         }
-        /*
-        float zmienna = trackBar2.Value + trackBar1.Value;
-        float zmienna2 = zmienna / 25;
-        chart1.Series["Speed"].Points.AddY(zmienna2);
-        */
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            float zmienna = trackBar2.Value + trackBar1.Value;
+            float zmienna2 = zmienna / 25;
+            float zmienna_temp = trackBar3.Value;
+            chart1.Series["Speed"].Points.AddXY(0, zmienna2);
+            chart1.Series["Temp"].Points.AddXY(0, zmienna_temp);
+            timer2.Start();
+        }
     }
 }
