@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Speech.Recognition;
-using System.Speech.Synthesis;
+using System.Speech.Synthesis;using System.Threading;
+
 
 namespace HMI_project
 {
@@ -34,6 +35,8 @@ namespace HMI_project
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            RecognizeSpeech();
+
             label3.Text = DateTime.Now.ToLongTimeString();
 
             label4.Text = DateTime.Now.ToLongDateString();
@@ -83,5 +86,41 @@ namespace HMI_project
             chart1.Series["Temp"].Points.AddXY(0, zmienna_temp);
             timer2.Start();
         }
+
+        static SpeechRecognitionEngine _recognizer = null;
+        SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
+        void RecognizeSpeech()
+        {
+            _recognizer = new SpeechRecognitionEngine();
+            _recognizer.LoadGrammar(new DictationGrammar());
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("activate")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("deactivate")));
+            _recognizer.SpeechRecognized += _recognizeSpeech_SpeechRecognized;
+            _recognizer.SpeechRecognitionRejected += _recognizeSpeech_SpeechRecognitionRejected;
+            _recognizer.SetInputToDefaultAudioDevice();
+            _recognizer.RecognizeAsync(RecognizeMode.Multiple);
+        }
+        void _recognizeSpeech_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
+        {
+            if (e.Result.Text == "activate")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: AUTOPILOT START!");
+                speechSynthesizer.Speak("Initiating automatic driving mode");
+            }
+            else if (e.Result.Text == "deactivate")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: AUTOPILOT STOP!");
+                speechSynthesizer.Speak("Deactivating automatic driving mode");
+            }
+            else
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: " + e.Result.Text);
+            }
+        }
+        void _recognizeSpeech_SpeechRecognitionRejected(object sender,
+        SpeechRecognitionRejectedEventArgs e)
+        {
+            this.listBox1.Items.Add(">SpeechRecognitionEngine: Unrecognized command...");
+        }
     }
 }
