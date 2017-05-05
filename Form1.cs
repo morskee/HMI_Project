@@ -93,8 +93,12 @@ namespace HMI_project
         {
             _recognizer = new SpeechRecognitionEngine();
             _recognizer.LoadGrammar(new DictationGrammar());
-            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("activate")));
-            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("deactivate")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("activate autopilot")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("deactivate autopilot")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("start engine")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("stop engine")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("lights on")));
+            _recognizer.LoadGrammar(new Grammar(new GrammarBuilder("lights off")));
             _recognizer.SpeechRecognized += _recognizeSpeech_SpeechRecognized;
             _recognizer.SpeechRecognitionRejected += _recognizeSpeech_SpeechRecognitionRejected;
             _recognizer.SetInputToDefaultAudioDevice();
@@ -102,15 +106,35 @@ namespace HMI_project
         }
         void _recognizeSpeech_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
-            if (e.Result.Text == "activate")
+            if (e.Result.Text == "activate autopilot")
             {
                 this.listBox1.Items.Add(">SpeechRecognitionEngine: AUTOPILOT START!");
                 speechSynthesizer.Speak("Initiating automatic driving mode");
             }
-            else if (e.Result.Text == "deactivate")
+            else if (e.Result.Text == "deactivate autopilot")
             {
                 this.listBox1.Items.Add(">SpeechRecognitionEngine: AUTOPILOT STOP!");
                 speechSynthesizer.Speak("Deactivating automatic driving mode");
+            }
+            else if (e.Result.Text == "start engine")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: ENGINE START!");
+                speechSynthesizer.Speak("Engine start.");
+            }
+            else if (e.Result.Text == "stop engine")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: ENGINE STOP!");
+                speechSynthesizer.Speak("Engine stop.");
+            }
+            else if (e.Result.Text == "lights on")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: LIGHTS ON!");
+                speechSynthesizer.Speak("Turn on the lights.");
+            }
+            else if (e.Result.Text == "lights off")
+            {
+                this.listBox1.Items.Add(">SpeechRecognitionEngine: LIGHTS OFF!");
+                speechSynthesizer.Speak("Turn off the lights.");
             }
             else
             {
