@@ -37,16 +37,18 @@ namespace HMI_project
         {
             RecognizeSpeech();
 
-            label3.Text = DateTime.Now.ToLongTimeString();
+            label12.Text = DateTime.Now.ToLongTimeString();
 
-            label4.Text = DateTime.Now.ToLongDateString();
+            label13.Text = DateTime.Now.ToLongDateString();
+
+            label5.Text = "123456KM";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label3.Text = DateTime.Now.ToLongTimeString();
+            label12.Text = DateTime.Now.ToLongTimeString();
             
-            label4.Text = DateTime.Now.ToLongDateString();
+            label13.Text = DateTime.Now.ToLongDateString();
 
             timer1.Start();
         }
@@ -86,7 +88,7 @@ namespace HMI_project
             chart1.Series["Temp"].Points.AddXY(0, zmienna_temp);
             timer2.Start();
         }
-
+        
         static SpeechRecognitionEngine _recognizer = null;
         SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         void RecognizeSpeech()
@@ -145,6 +147,8 @@ namespace HMI_project
         SpeechRecognitionRejectedEventArgs e)
         {
             this.listBox1.Items.Add(">SpeechRecognitionEngine: Unrecognized command...");
-        }
+        }        
+
+
     }
 }
