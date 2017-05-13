@@ -19,6 +19,19 @@ namespace HMI_project
         {
             InitializeComponent();
         }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+            //RecognizeSpeech();
+
+            label12.Text = DateTime.Now.ToLongTimeString();
+
+            label13.Text = DateTime.Now.ToLongDateString();
+
+            label5.Text = "123456KM";
+
+        }
+
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
             aGauge1.Value = trackBar1.Value;
@@ -31,17 +44,6 @@ namespace HMI_project
 
                 label11.Text = "" + zmienna2.ToString("F2") + "L/100KM";
             }
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            RecognizeSpeech();
-
-            label12.Text = DateTime.Now.ToLongTimeString();
-
-            label13.Text = DateTime.Now.ToLongDateString();
-
-            label5.Text = "123456KM";
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -89,7 +91,7 @@ namespace HMI_project
             timer2.Start();
         }
         
-        static SpeechRecognitionEngine _recognizer = null;
+        /*static SpeechRecognitionEngine _recognizer = null;
         SpeechSynthesizer speechSynthesizer = new SpeechSynthesizer();
         void RecognizeSpeech()
         {
@@ -147,8 +149,51 @@ namespace HMI_project
         SpeechRecognitionRejectedEventArgs e)
         {
             this.listBox1.Items.Add(">SpeechRecognitionEngine: Unrecognized command...");
-        }        
+        }
+        */
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                this.pictureBox16.Load("temp.jpg");
+            }
+            else
+                this.pictureBox16.Load("nic.jpg");
 
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                this.pictureBox7.Load("ster.jpg");
+            }
+            else
+                this.pictureBox7.Load("nic.jpg");
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked)
+            {
+                this.pictureBox1.Load("ABS.jpg");
+            }
+            else
+                this.pictureBox1.Load("nic.jpg");
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox4.Checked)
+            {
+                this.pictureBox17.Load("nic.jpg");
+            }
+            else
+                this.pictureBox17.Load("esp.jpg");
+        }
+
+        //TODO: zablokowanie, odpalanie silnika
+        //TODO: checkboxy
 
     }
 }
